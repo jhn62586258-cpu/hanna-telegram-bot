@@ -32,7 +32,7 @@ async function askGemini(prompt) {
     }
   );
   const data = await res.json();
-  const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text || "{}";
+const raw = data?.candidates?.at(0)?.content?.parts?.at(0)?.text || "{}";
   return JSON.parse(raw);
 }
 
